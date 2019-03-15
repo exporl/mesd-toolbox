@@ -1,6 +1,6 @@
 
 # EST toolbox
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
 ## License
 
 See the [LICENSE](LICENSE.md) file for license rights and limitations.  By downloading and/or installing this software and associated files on your computing system you agree to use the software under the terms and condition as specified in the License agreement.
@@ -25,8 +25,8 @@ All functions needed to compute the EST metric can be found in the [EST folder](
 
 The EST is computed in four steps:
 
- 1. Construction of the $p(\tau)$-performance curve by interpolating through the evaluated (on real EEG and audio data) $(\tau_i,p_i)$-points  (decision time,accuracy).
- 2. Optimization of the Markov chain in the number of states $N$ for each sampled $\tau$ on the $p(\tau)$-performance curve.
+ 1. Construction of the p(\tau)-performance curve by interpolating through the evaluated (on real EEG and audio data) (\tau_i,p_i)-points  (decision time,accuracy).
+ 2. Optimization of the Markov chain in the number of states N for each sampled \tau on the p(\tau)-performance curve.
  3. Computation of the transit time $T(p(\tau),\tau,\hat{N}_{\tau})$ per sampled $\tau$ and corresponding optimal number of states $\hat{N}_{\tau}$.
  4. The EST is equal to the minimal transit time over all evaluated transit times: 
  $\text{EST} = \underset{\tau}{\text{min }} T(p(\tau),\tau,\hat{N}_{\tau})$.
