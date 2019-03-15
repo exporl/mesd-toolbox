@@ -13,9 +13,9 @@
 % 4. The EST is equal to the minimal transit time over all evaluated transit times.
 %
 % If this method has been useful for you, please cite the following:
-% [1] S. Geirnaert, T. Francart, and A. Bertrand, “Expected Switching Time: an Interpretable Performance Metric to Evaluate Neural Decoders for Auditory Attention Detection,” March 2019, Internal Report
-% [2] S. Geirnaert, T. Francart, and A. Bertrand, “A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain,” March 2019, Internal Report
-% [3] S. Geirnaert, T. Francart, and A. Bertrand, “EST toolbox,” March 2019, Available online, URL: ?
+% [1] S. Geirnaert, T. Francart, and A. Bertrand, â€œExpected Switching Time: an Interpretable Performance Metric to Evaluate Neural Decoders for Auditory Attention Detection,â€ March 2019, Internal Report
+% [2] S. Geirnaert, T. Francart, and A. Bertrand, â€œA New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain,â€ March 2019, Internal Report
+% [3] S. Geirnaert, T. Francart, and A. Bertrand, â€œEST toolbox,â€ March 2019, Available online, URL: https://github.com/exporl/est-toolbox
 %
 % Author: Simon Geirnaert, KU Leuven, Department of Electrical Engineering
 % (ESAT), STADIUS Center for Dynamical Systems, Signal Processing and Data
