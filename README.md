@@ -17,7 +17,7 @@ Developed and tested in MATLAB R2018b.
 
 ### Documentation
 
-All functions are documented properly in their respective m-files. Additional documentation  and examples can be found in the [doc](doc/) folder, which contains a  [manual](doc/manual.pdf) in pdf format and a [EST demo file](doc/est_demo.m) to illustrate  the usage of the various functions. A quick start guide is provided in the next section.
+All functions are documented properly in their respective m-files. Additional documentation  and examples can be found in the [doc](doc/) folder, which contains a  [manual](doc/manual.pdf) in pdf format and a [EST demo file](doc/estDemo.m) to illustrate  the usage of the various functions. A quick start guide is provided in the next section.
  
 ### Quick start guide
  
@@ -27,7 +27,7 @@ All functions needed to compute the EST metric can be found in the [EST folder](
 
 The EST is computed in four steps:
 
- 1. Construction of the p(tau)-performance curve by interpolating through the evaluated (on real EEG and audio data) (tau_i,p_i)-points  (decision time,accuracy).
+ 1. Construction of the p(tau)-performance curve by interpolating through the evaluated (on real EEG and audio data) (tau_i,p_i)-points  (decision time, accuracy).
  2. Optimization of the Markov chain in the number of states N for each sampled tau on the p(tau)-performance curve.
  3. Computation of the transit time T(p(tau),tau,N_tau) per sampled tau and corresponding optimal number of states N_tau.
  4. The EST is equal to the minimal transit time over all evaluated transit times.
