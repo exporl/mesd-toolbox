@@ -1,7 +1,7 @@
 function MHT = meanHittingTime(p,i,k)
 % MEANHITTINGTIME Compute mean hitting time from state i to k.
 %   MHT = MEANHITTINGTIME(p,i,k) computes the mean hitting time from
-%   state i to given state k, given transition probability p ..
+%   state i to given state k, given transition probability p.
 %
 %   Inputs:
 %       p [DOUBLE]: the transition probability (0 <= p <= 1)

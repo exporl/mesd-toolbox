@@ -16,4 +16,15 @@ function ss = ssDistribution(p,N)
 q = 1-p;
 r = p./q;
 ss = (r-1)/(r^N-1)*r.^((1:N)'-1);
+
+switch p
+    case 0.5
+        ss = ones(N,1)*1/N;
+    case 1
+        ss(1:N-1) = 0;
+        ss(N) = 1;
+    case 0
+        ss(1) = 1;
+        ss(2:N) = 0;
+end
 end

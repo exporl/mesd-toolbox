@@ -18,4 +18,11 @@ function E = evState(p,N)
 %% Compute expected value
 r = p./(1-p);
 E = round((N.*r.^N)./(r.^N-1)-1./(r-1));
+
+switch p
+    case 0.5
+        E = (N+1)/2;
+    case 1
+        E = N;
+end
 end

@@ -21,10 +21,14 @@ Nopt = zeros(size(p));
 
 %% Compute optimal number of states
 for l = 1:length(p)
-    N = Nmin(l);
-    while stateToAmpl(lbCfdInt(p(l),N,P0(l)),N) < c(l)
-        N = N+1;
+    if p(l) == 0.5
+        Nopt(l) = Inf;
+    else
+        N = Nmin(l);
+        while stateToAmpl(lbCfdInt(p(l),N,P0(l)),N) < c(l)
+            N = N+1;
+        end
+        Nopt(l) = N;
     end
-    Nopt(l) = N;
 end
 end
