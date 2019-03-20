@@ -2,7 +2,7 @@
 % Version 1.0, 06-03-2019
 %
 % MAIN FUNCTION
-%   EST                  - Compute the expected switching time based on (tau,p)-points.
+%   computeEST           - Compute the expected switching time based on (tau,p)-points.
 %
 % OPTIMIZATION MARKOV CHAIN MODEL
 %   optimizeMarkovChain  - Compute the optimal AAD Markov chain.

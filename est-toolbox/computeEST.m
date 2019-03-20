@@ -1,10 +1,10 @@
-function [est,varargout] = EST(tau,p,varargin)
-% EST Compute the expected switching time based on (tau,p)-points.
-%   est = EST(tau,p) computes the expected swithcing time based on the 
+function [est,varargout] = computeEST(tau,p,varargin)
+% COMPUTEEST Compute the expected switching time based on (tau,p)-points.
+%   est = COMPUTEEST(tau,p) computes the expected swithcing time based on the 
 %   evaluated (decision time, accuracy)-points (tau,p), using minimally 5 
 %   states, lower bound 0.65 and confidence level 0.9.
 %
-%   [est,Nopt,tauOpt,pOpt] = EST(tau,p) also returns the
+%   [est,Nopt,tauOpt,pOpt] = COMPUTEEST(tau,p) also returns the
 %   optimal number of states Nopt, decision time tauOpt and accuracy
 %   pOpt.
 %

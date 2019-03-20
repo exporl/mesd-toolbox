@@ -1,4 +1,4 @@
-
+﻿
 # EST toolbox
 
 ## License
@@ -32,10 +32,10 @@ The EST is computed in four steps:
  3. Computation of the transit time T(p(tau),tau,N_tau) per sampled tau and corresponding optimal number of states N_tau.
  4. The EST is equal to the minimal transit time over all evaluated transit times.
  
-These steps are implemented in the *main*-function [EST.m](est-toolbox/EST.m). Given the evaluated (tau_i,p_i)-performance points `(tau,p)`, the EST can be computed with:
+These steps are implemented in the *main*-function [computeEST.m](est-toolbox/computeEST.m). Given the evaluated (tau_i,p_i)-performance points `(tau,p)`, the EST can be computed with:
 
-     est = EST(tau,p);
- The default hyperparameter values are P_0 = 0.9 (confidence level), c = 0.65 (lower bound confidence interval), N_min = 5 (minimal number of states) and K = 1000 (number of samples evaluated on the performance curve). These hyperparameters can be adapted via extra arguments in the `EST`-function.
+     est = computeEST(tau,p);
+ The default hyperparameter values are P_0 = 0.9 (confidence level), c = 0.65 (lower bound confidence interval), N_min = 5 (minimal number of states) and K = 1000 (number of samples evaluated on the performance curve). These hyperparameters can be adapted via extra arguments in the `computeEST`-function.
  
 **Designing an optimal Markov chain model for a neuro-steered hearing prosthesis** 
 
@@ -44,9 +44,9 @@ In Section *II.D*, a methodology is proposed to design an optimal Markov chain m
      Nopt = optimizeMarkovChain(p,Nmin,P0,c);
 
 
-The optimal model for a certain neural decoder (represented by evaluated (tau_i,p_i)-points) can be identified by extra outputs of the `EST`-function:
+The optimal model for a certain neural decoder (represented by evaluated (tau_i,p_i)-points) can be identified by extra outputs of the `computeEST`-function:
 
-     [est,Nopt,tauOpt,pOpt] = EST(tau,p,'Nmin',Nmin,'P0',P0,'c',c);
+     [est,Nopt,tauOpt,pOpt] = computeEST(tau,p,'Nmin',Nmin,'P0',P0,'c',c);
 
  ## References
  

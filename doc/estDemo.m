@@ -4,7 +4,7 @@
 % evaluated performance points.
 %
 % NOTES: 
-%   - check that the 'mtt-toolbox' directory is on the MATLAB path.
+%   - check that the 'est-toolbox' directory is on the MATLAB path.
 %
 % The EST is computed in four steps:
 % 1. Construction of the performance curve by interpolating through the evaluated (on real EEG and audio data) (decision time,accuracy)-points.
@@ -13,9 +13,9 @@
 % 4. The EST is equal to the minimal transit time over all evaluated transit times.
 %
 % If this method has been useful for you, please cite the following:
-% [1] S. Geirnaert, T. Francart, and A. Bertrand, “Expected Switching Time: an Interpretable Performance Metric to Evaluate Neural Decoders for Auditory Attention Detection,” March 2019, Internal Report
-% [2] S. Geirnaert, T. Francart, and A. Bertrand, “A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain,” March 2019, Internal Report
-% [3] S. Geirnaert, T. Francart, and A. Bertrand, “EST toolbox,” March 2019, Available online, URL: https://github.com/exporl/est-toolbox
+% [1] S. Geirnaert, T. Francart, and A. Bertrand, “Expected Switching Time: an Interpretable Performance Metric to Evaluate Neural Decoders for Auditory Attention Detection,�? March 2019, Internal Report
+% [2] S. Geirnaert, T. Francart, and A. Bertrand, “A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain,�? March 2019, Internal Report
+% [3] S. Geirnaert, T. Francart, and A. Bertrand, “EST toolbox,�? March 2019, Available online, URL: https://github.com/exporl/est-toolbox
 %
 % Author: Simon Geirnaert, KU Leuven, Department of Electrical Engineering
 % (ESAT), STADIUS Center for Dynamical Systems, Signal Processing and Data
@@ -95,7 +95,7 @@ subplot(1,3,3); hold on;
 plot(tauOpt,est,'kd','MarkerFaceColor','k');
 
 % This can all be computed with the main-function 'EST':
-est = EST(tau{1},p{1});
+est = computeEST(tau{1},p{1});
 
 % The hyperparameters can be changed individually by inputting for example
 % EST(tau,p,'Nmin',10)
@@ -113,7 +113,7 @@ ylabel('accuracy');
 % Compute the EST
 est = zeros(nbDec,1); Nopt = zeros(nbDec,1); tauOpt = zeros(nbDec,1); pOpt = zeros(nbDec,1);
 for d = 1:nbDec
-   [est(d),Nopt(d),tauOpt(d),pOpt(d)] = EST(tau{d},p{d});
+   [est(d),Nopt(d),tauOpt(d),pOpt(d)] = computeEST(tau{d},p{d});
 end
 
 % Show the optimal working points
