@@ -28,7 +28,7 @@ function [est,varargout] = computeEST(tau,p,varargin)
 assert(all(tau > 0),'tau should be positive.');
 assert(all(p > 0.5 & p <= 1),'p should lie within ]0.5,1].');
 ip = inputParser;
-addParameter(ip,'Nmin',5,@(s) assert(isinteger(s) && all(s >= 2),'Nmin shoud be larger than or equal to 2.'));
+addParameter(ip,'Nmin',5,@(s) assert(isnumeric(s) && all(s >= 2),'Nmin shoud be larger than or equal to 2.'));
 addParameter(ip,'P0',0.9,@(s) assert(isnumeric(s) && all(s > 0 & s < 1),'P0 should lie within ]0,1[.'));
 addParameter(ip,'c',0.65,@(s) assert(isnumeric(s) && all(s >= 0 & s < 1),'c should lie within [0,1[.'));
 parse(ip,varargin{:})
