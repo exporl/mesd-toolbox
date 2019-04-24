@@ -50,7 +50,7 @@ The optimal model for a certain neural decoder (represented by evaluated (tau_i,
 
  ## References
  
-[1] S. Geirnaert, T. Francart, and A. Bertrand,  "Expected Switching Time: an Interpretable Performance Metric to Evaluate Neural Decoders for Auditory Attention Detection," March 2019, *Internal Report*
+[1] S. Geirnaert, T. Francart, and A. Bertrand,  "Expected Switching Time: an Interpretable Performance Metric to Evaluate Neural Decoders for Auditory Attention Detection," April 2019, *Internal Report*
 
 [2] S. Geirnaert, T. Francart, and A. Bertrand,  "A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain," March 2019, *Internal Report*
 
