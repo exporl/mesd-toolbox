@@ -42,7 +42,7 @@ tau = tau(:); p = p(:);
 Nopt = optimizeMarkovChain(p,args.Nmin,args.P0,args.c);
 
 %% Compute transit time per sampled point
-k = lbCfdInt(p,Nopt,args.P0);
+k = ceil(args.c.*(Nopt-1)+1);
 T = transitTime(tau,p,k);
 
 %% Compute optimal MTT
