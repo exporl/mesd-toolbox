@@ -47,9 +47,9 @@ ylabel('accuracy');
 % Per tau on the performance curve, a Markov chain is optimized via the
 % lower bound of the P0-confidence interval. The arguments consist of the
 % sampled accuracies and hyperparameter Nmin (default: 5), P0 
-% (default: 0.9) and c (default: 0.65).
+% (default: 0.8) and c (default: 0.65).
 
-Nmin = 5; P0 = 0.9; c = 0.65; % the hyperparameters
+Nmin = 5; P0 = 0.8; c = 0.65; % the hyperparameters
 Nopt = optimizeMarkovChain(pIp,Nmin,P0,c);
 
 % Plot the optimal number of states in function of tau

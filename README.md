@@ -35,7 +35,7 @@ The EST is computed in four steps:
 These steps are implemented in the *main*-function [computeEST.m](est-toolbox/computeEST.m). Given the evaluated (tau_i,p_i)-performance points `(tau,p)`, the EST can be computed with:
 
      est = computeEST(tau,p);
- The default hyperparameter values are P_0 = 0.9 (confidence level), c = 0.65 (lower bound confidence interval), N_min = 5 (minimal number of states) and K = 1000 (number of samples evaluated on the performance curve). These hyperparameters can be adapted via extra arguments in the `computeEST`-function.
+ The default hyperparameter values are P_0 = 0.8 (confidence level), c = 0.65 (lower bound confidence interval), N_min = 5 (minimal number of states) and K = 1000 (number of samples evaluated on the performance curve). These hyperparameters can be adapted via extra arguments in the `computeEST`-function.
  
 **Designing an optimal Markov chain model for a neuro-steered hearing prosthesis** 
 
