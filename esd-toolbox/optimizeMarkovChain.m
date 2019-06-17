@@ -16,7 +16,7 @@ function Nopt = optimizeMarkovChain(p,Nmin,P0,c)
 % Correspondence: simon.geirnaert@esat.kuleuven.be
 
 %% Input processing
-[p,Nmin,P0,c] = est_utils.processInputs(p,Nmin,P0,c);
+[p,Nmin,P0,c] = esd_utils.processInputs(p,Nmin,P0,c);
 Nopt = zeros(size(p));
 
 %% Compute optimal number of states

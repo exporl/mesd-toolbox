@@ -1,8 +1,8 @@
-function T = transitTime(tau,p,k)
-% TRANSITTIME Compute the expected transit time to state k.
-%   T = TRANSITTIME(tau,p,k) computes the transit time to state k, averaged
-%   over all initial states (1,...,k-1), with given transition probability 
-%   p and decision time tau.
+function T = emtt(tau,p,k)
+% EMTT Compute the expected Markov transit time to state k.
+%   T = EMTT(tau,p,k) computes the expected Markov transit time to state k,
+%   averaged over all initial states (1,...,k-1), with given transition
+%   probability p and decision time tau.
 %
 %   Inputs:
 %       tau [DOUBLE]: the decision time
@@ -15,9 +15,9 @@ function T = transitTime(tau,p,k)
 % Correspondence: simon.geirnaert@esat.kuleuven.be
 
 %% Asserts and processing inputs
-[tau,p,k] = est_utils.processInputs(tau,p,k);
+[tau,p,k] = esd_utils.processInputs(tau,p,k);
 
-%% Compute transit time
+%% Compute expected Markov transit time
 T = zeros(length(tau),1);
 for l = 1:length(tau)
     if k(l) == 1

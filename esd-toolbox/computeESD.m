@@ -1,15 +1,15 @@
-function [est,varargout] = computeEST(tau,p,varargin)
-% COMPUTEEST Compute the expected switching time based on (tau,p)-points.
-%   est = COMPUTEEST(tau,p) computes the expected swithcing time based on the 
-%   evaluated (decision time, accuracy)-points (tau,p), using minimally 5 
-%   states, lower bound 0.65 and confidence level 0.8.
+function [esd,varargout] = computeESD(tau,p,varargin)
+% COMPUTEESD Compute the expected switch duration based on (tau,p)-points.
+%   esd = COMPUTEESD(tau,p) computes the expected swithcing time based on
+%   the evaluated (decision time, accuracy)-points (tau,p), using minimally 
+%   5 states, lower bound 0.65 and confidence level 0.8.
 %
-%   [est,Nopt,tauOpt,pOpt] = COMPUTEEST(tau,p) also returns the
+%   [esd,Nopt,tauOpt,pOpt] = COMPUTEESD(tau,p) also returns the
 %   optimal number of states Nopt, decision time tauOpt and accuracy
 %   pOpt.
 %
-%   [...] = EST(tau,p,'Nmin',Nmin,'P0',P0,'c',c) uses minimal number of
-%   states Nmin, confidence level P0 and lower bound c.
+%   [...] = COMPUTEESD(tau,p,'Nmin',Nmin,'P0',P0,'c',c) uses minimal number
+%   of states Nmin, confidence level P0 and lower bound c.
 %
 %   Inputs:
 %       tau [DOUBLE]: evaluated decision lengths
@@ -24,7 +24,7 @@ function [est,varargout] = computeEST(tau,p,varargin)
 % Correspondence: simon.geirnaert@esat.kuleuven.be
 
 %% Asserts and input processing
-[tau,p] = est_utils.processInputs(tau,p);
+[tau,p] = esd_utils.processInputs(tau,p);
 assert(all(tau > 0),'tau should be positive.');
 assert(all(p > 0.5 & p <= 1),'p should lie within ]0.5,1].');
 ip = inputParser;
@@ -41,11 +41,11 @@ tau = tau(:); p = p(:);
 %% Optimize Markov chain per sampled point
 Nopt = optimizeMarkovChain(p,args.Nmin,args.P0,args.c);
 
-%% Compute transit time per sampled point
+%% Compute expected Markov transit time per sampled point
 k = ceil(args.c.*(Nopt-1)+1);
-T = transitTime(tau,p,k);
+T = emtt(tau,p,k);
 
-%% Compute optimal MTT
-[est,ind] = min(T);
+%% Compute optimal EMTT
+[esd,ind] = min(T);
 varargout{1} = Nopt(ind); varargout{2} = tau(ind); varargout{3} = p(ind);
 end

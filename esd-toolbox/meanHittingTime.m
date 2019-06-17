@@ -14,7 +14,7 @@ function MHT = meanHittingTime(p,i,k)
 % Correspondence: simon.geirnaert@esat.kuleuven.be
 
 %% Process inputs and assert i <= k
-[p,i,k] = est_utils.processInputs(p,i,k);
+[p,i,k] = esd_utils.processInputs(p,i,k);
 assert(all(i <= k),'i should be smaller or equal to k. If you want i > k, change p -> 1-p, i -> N-i+1 and k -> N-k+1');
 
 %% Compute MHT

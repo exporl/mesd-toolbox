@@ -24,7 +24,7 @@ end
 varargout = cellfun(@(x)reshape(x,[],1),varargin,'UniformOutput',false);
 
 % Check if the input sizes match
-[err,sizeOut] = est_utils.checkInputSizes(varargout{:});
+[err,sizeOut] = esd_utils.checkInputSizes(varargout{:});
 if err
     error('Input size mismatch.');
 end

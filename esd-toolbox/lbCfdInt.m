@@ -16,7 +16,7 @@ function k = lbCfdInt(p,N,P0)
 % Correspondence: simon.geirnaert@esat.kuleuven.be
 
 %% Asserts and processing inputs
-[p,N,P0] = est_utils.processInputs(p,N,P0);
+[p,N,P0] = esd_utils.processInputs(p,N,P0);
 
 %% Compute lower bound
 r = p./(1-p);

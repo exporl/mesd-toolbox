@@ -13,7 +13,7 @@ function x = stateToAmpl(state,N)
 % Correspondence: simon.geirnaert@esat.kuleuven.be
 
 %% Asserts and input processing
-[state,N] = est_utils.processInputs(state,N);
+[state,N] = esd_utils.processInputs(state,N);
 
 %% Transform
 x = (state-1)./(N-1);

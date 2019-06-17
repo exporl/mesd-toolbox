@@ -2,7 +2,7 @@
 % Version 1.0, 06-03-2019
 %
 % MAIN FUNCTION
-%   computeEST           - Compute the expected switching time based on (tau,p)-points.
+%   computeESD           - Compute the expected switch duration based on (tau,p)-points.
 %
 % OPTIMIZATION MARKOV CHAIN MODEL
 %   optimizeMarkovChain  - Compute the optimal AAD Markov chain.
@@ -17,7 +17,7 @@
 %
 % FUNDAMENTAL METRICS
 %   meanHittingTime      - Compute the mean hitting time from state i to k.
-%   transitTime          - Compute the expected transit time to state k.
+%   emtt          - Compute the expected Markov transit time to state k.
 %
 % CONSTRUCTION PERFORMANCE CURVE
 %   interpolatePerfCurve - Interpolate the performance curve through

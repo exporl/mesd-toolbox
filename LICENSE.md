@@ -75,7 +75,7 @@ By downloading and or installing the Software and associated files on your compu
 
 #### A.1 Description of the Software:
 
-The Software constitutes any software distributed as part of or pertaining to the MATLAB code as made available online at https://github.com/exporl/est-toolbox.
+The Software constitutes any software distributed as part of or pertaining to the MATLAB code as made available online at https://github.com/exporl/esd-toolbox.
 
 
 #### A.2 References:
@@ -84,5 +84,5 @@ The Software constitutes any software distributed as part of or pertaining to th
 
 [2] S. Geirnaert, T. Francart, and A. Bertrand,  "A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain," March 2019, *Internal Report*
 
-[3] S. Geirnaert, T. Francart, and A. Bertrand, "EST toolbox," March 2019, Available online, URL: https://github.com/exporl/est-toolbox
+[3] S. Geirnaert, T. Francart, and A. Bertrand, "ESD toolbox," March 2019, Available online, URL: https://github.com/exporl/esd-toolbox
 
