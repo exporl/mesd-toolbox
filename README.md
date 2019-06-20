@@ -1,4 +1,3 @@
-﻿
 # ESD toolbox
 
 ## License
@@ -54,4 +53,4 @@ The optimal model for a certain neural decoder (represented by evaluated (tau_i,
 
 [2] S. Geirnaert, T. Francart, and A. Bertrand,  "A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain," March 2019, *Internal Report*
 
-[3] S. Geirnaert, T. Francart, and A. Bertrand, “ESD toolbox,�? March 2019, Available online, URL: https://github.com/exporl/esd-toolbox
+[3] S. Geirnaert, T. Francart, and A. Bertrand, â€œESD toolbox,â€? March 2019, Available online, URL: https://github.com/exporl/esd-toolbox
