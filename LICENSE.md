@@ -84,5 +84,5 @@ The Software constitutes any software distributed as part of or pertaining to th
 
 [2] S. Geirnaert, T. Francart, and A. Bertrand, "A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain," Accepted for publication in Proc. European Signal Processing Conference (EUSIPCO), A Coruña, Spain, Sept. 2019
 
-[3] S. Geirnaert, T. Francart, and A. Bertrand, "MESD toolbox," March 2019, Available online, URL: https://github.com/exporl/mesd-toolbox
+[3] S. Geirnaert, T. Francart, and A. Bertrand, "MESD toolbox," August 2019, Available online, URL: https://github.com/exporl/mesd-toolbox
 

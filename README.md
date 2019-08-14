@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-# ESD toolbox
-=======
-﻿
-# MESD toolbox
->>>>>>> esd-> mesd, changes consistent with manuscript
+﻿# MESD toolbox
 
 ## License
 
@@ -58,8 +53,5 @@ The optimal model for a certain neural decoder (represented by evaluated (tau_i,
 
 [2] S. Geirnaert, T. Francart, and A. Bertrand, "A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain," Accepted for publication in Proc. European Signal Processing Conference (EUSIPCO), A Coruña, Spain, Sept. 2019
 
-<<<<<<< HEAD
-[3] S. Geirnaert, T. Francart, and A. Bertrand, â€œESD toolbox,â€? March 2019, Available online, URL: https://github.com/exporl/esd-toolbox
-=======
 [3] S. Geirnaert, T. Francart, and A. Bertrand, "MESD toolbox," August 2019, Available online, URL: https://github.com/exporl/mesd-toolbox
->>>>>>> esd-> mesd, changes consistent with manuscript
+
