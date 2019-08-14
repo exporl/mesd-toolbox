@@ -75,14 +75,14 @@ By downloading and or installing the Software and associated files on your compu
 
 #### A.1 Description of the Software:
 
-The Software constitutes any software distributed as part of or pertaining to the MATLAB code as made available online at https://github.com/exporl/esd-toolbox.
+The Software constitutes any software distributed as part of or pertaining to the MATLAB code as made available online at https://github.com/exporl/mesd-toolbox.
 
 
 #### A.2 References:
 
-[1] S. Geirnaert, T. Francart, and A. Bertrand,  "Expected Switching Time: an Interpretable Performance Metric to Evaluate Neural Decoders for Auditory Attention Detection," March 2019, *Internal Report*
+[1] S. Geirnaert, T. Francart, and A. Bertrand, "An Interpretable Performance Metric for Auditory Attention Decoding Algorithms in a Context of Neuro-Steered Gain Control," August 2019, *Internal Report*
 
-[2] S. Geirnaert, T. Francart, and A. Bertrand,  "A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain," March 2019, *Internal Report*
+[2] S. Geirnaert, T. Francart, and A. Bertrand, "A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain," Accepted for publication in Proc. European Signal Processing Conference (EUSIPCO), A Coruña, Spain, Sept. 2019
 
-[3] S. Geirnaert, T. Francart, and A. Bertrand, "ESD toolbox," March 2019, Available online, URL: https://github.com/exporl/esd-toolbox
+[3] S. Geirnaert, T. Francart, and A. Bertrand, "MESD toolbox," March 2019, Available online, URL: https://github.com/exporl/mesd-toolbox
 

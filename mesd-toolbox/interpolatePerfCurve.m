@@ -2,10 +2,11 @@ function [tau,p] = interpolatePerfCurve(tau,p)
 % INTERPOLATEPERFCURVE Interpolate the performance curve through evaluated
 % points.
 %   [tau,p] = INTERPOLATEPERFCURVE(tau,p) linearly interpolates the
-%   performance through evaluated (decision time, accuracy)-points (tau,p).
+%   performance through evaluated (decision window length, accuracy)-points 
+%   (tau,p).
 %
 %   Inputs:
-%       tau [DOUBLE]: evaluated decision lengths
+%       tau [DOUBLE]: evaluated decision window lengths
 %       p [DOUBLE]: evaluated accuracies
 
 % Author: Simon Geirnaert, KU Leuven, Department of Electrical Engineering

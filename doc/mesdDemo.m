@@ -1,21 +1,21 @@
-%% Demonstration of the ESD toolbox to compute the ESD metric as AAD performance metric 
+%% Demonstration of the MESD toolbox to compute the MESD metric as AAD performance metric 
 %
-% This file demonstrates how the ESD metric can be computed based on
+% This file demonstrates how the MESD metric can be computed based on
 % evaluated performance points.
 %
 % NOTES: 
-%   - check that the 'esd-toolbox' directory is on the MATLAB path.
+%   - check that the 'mesd-toolbox' directory is on the MATLAB path.
 %
-% The ESD is computed in four steps:
-% 1. Construction of the performance curve by interpolating through the evaluated (on real EEG and audio data) (decision time,accuracy)-points.
+% The MESD is computed in four steps:
+% 1. Construction of the performance curve by interpolating through the evaluated (on real EEG and audio data) (decision window length,accuracy)-points.
 % 2. Optimization of the Markov chain in the number of states N for each sampled point tau on the performance curve.
-% 3. Computation of the expected Markov transit time T per sampled tau and corresponding optimal number of states N.
-% 4. The ESD is equal to the minimal transit time over all evaluated transit times.
+% 3. Computation of the exected switch duration (ESD) per sampled tau and corresponding optimal number of states N.
+% 4. The MESD is equal to the minimal ESD over all sampled decision window lengths.
 %
 % If this method has been useful for you, please cite the following:
-% [1] S. Geirnaert, T. Francart, and A. Bertrand, “Expected Switch Duration: an Interpretable Performance Metric to Evaluate Neural Decoders for Auditory Attention Detection,” March 2019, Internal Report
+% [1] S. Geirnaert, T. Francart, and A. Bertrand, “An Interpretable Performance Metric for Auditory Attention Decoding Algorithms in a Context of Neuro-Steered Gain Control,” August 2019, Internal Report
 % [2] S. Geirnaert, T. Francart, and A. Bertrand, “A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain,” Accepted for publication in Proc. European Signal Processing Conference (EUSIPCO), A Coruña, Spain, Sept. 2019
-% [3] S. Geirnaert, T. Francart, and A. Bertrand, “ESD toolbox,” March 2019, Available online, URL: https://github.com/exporl/esd-toolbox
+% [3] S. Geirnaert, T. Francart, and A. Bertrand, “MESD toolbox,” August 2019, Available online, URL: https://github.com/exporl/mesd-toolbox
 %
 % Author: Simon Geirnaert, KU Leuven, Department of Electrical Engineering
 % (ESAT), STADIUS Center for Dynamical Systems, Signal Processing and Data
@@ -58,29 +58,27 @@ plot(tauIp,Nopt,'-','linewidth',2);
 xlabel('\tau [s]');
 ylabel('Nopt');
 
-%% 3. Compute the expected Markov transit time per sampled point
-% Per point on the performance curve, the expected Markov transit time is computed, using
-% the optimized Markov chain. First, the lower bound of the P0-confidence
-% interval is computed, whereafter it can be used to compute the expected Markov transit
-% time.
+%% 3. Compute the expected switch duration per sampled point
+% Per point on the performance curve, the expected switch duration is computed, using
+% the optimized Markov chain. First, the target state is computed, whereafter 
+% it can be used to compute the expected switch duration.
 
-k = ceil(c.*(Nopt-1)+1);
-T = emtt(tauIp,pIp,k);
+kc = targetState(Nopt,c);
+esd = emtt(tauIp,pIp,kc);
 
-% Plot the lower bound of the P0-confidence interval and the expected 
-% Markov transit time in function of tau
+% Plot the target state and the expected switch duration in function of tau
 subplot(1,3,2); hold on;
-plot(tauIp,k,'-','linewidth',2);
-ylabel('Nopt/k');
+plot(tauIp,kc,'-','linewidth',2);
+ylabel('Nopt/kc');
 
 subplot(1,3,3);
-plot(tauIp,T,'-','linewidth',2);
+plot(tauIp,esd,'-','linewidth',2);
 xlabel('\tau [s]');
 ylabel('T [s]');
 
-%% 4. Compute the ESD
-% The ESD is equal to the minimal expected Markov transit time over the performance curve.
-[esd,ind] = min(T);
+%% 4. Compute the MESD
+% The MESD is equal to the minimal ESD over the performance curve.
+[mesd,ind] = min(esd);
 Nopt = Nopt(ind); tauOpt = tauIp(ind); pOpt = pIp(ind);
 
 % Show the optimal working point
@@ -92,13 +90,13 @@ plot(tauOpt,Nopt,'kd','MarkerFaceColor','k');
 legend('Nopt','lower bound','Optimal');
 
 subplot(1,3,3); hold on;
-plot(tauOpt,esd,'kd','MarkerFaceColor','k');
+plot(tauOpt,mesd,'kd','MarkerFaceColor','k');
 
-% This can all be computed with the main-function 'ESD':
-esd = computeESD(tau{1},p{1});
+% This can all be computed with the main-function 'computeMESD':
+mesd = computeMESD(tau{1},p{1});
 
 % The hyperparameters can be changed individually by inputting for example
-% computeESD(tau,p,'Nmin',10)
+% computemESD(tau,p,'Nmin',10)
 
 %% Compare now three algorithms
 
@@ -110,10 +108,10 @@ end
 xlabel('\tau [s]');
 ylabel('accuracy');
 
-% Compute the ESD
-esd = zeros(nbDec,1); Nopt = zeros(nbDec,1); tauOpt = zeros(nbDec,1); pOpt = zeros(nbDec,1);
+% Compute the MESD
+mesd = zeros(nbDec,1); Nopt = zeros(nbDec,1); tauOpt = zeros(nbDec,1); pOpt = zeros(nbDec,1);
 for d = 1:nbDec
-   [esd(d),Nopt(d),tauOpt(d),pOpt(d)] = computeESD(tau{d},p{d});
+   [mesd(d),Nopt(d),tauOpt(d),pOpt(d)] = computeMESD(tau{d},p{d});
 end
 
 % Show the optimal working points
@@ -123,4 +121,4 @@ end
 legend('Decoder_1','Decoder_2','Decoder_3');
 
 % Display results
-T = table(esd,Nopt,tauOpt,pOpt,'VariableNames',{'ESD','Nopt','tauOpt','accOpt'},'RowNames',{'Decoder_1','Decoder_2','Decoder_3'})
+mesd = table(mesd,Nopt,tauOpt,pOpt,'VariableNames',{'MESD','Nopt','tauOpt','accOpt'},'RowNames',{'Decoder_1','Decoder_2','Decoder_3'})

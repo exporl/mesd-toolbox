@@ -2,7 +2,8 @@ function T = emtt(tau,p,k)
 % EMTT Compute the expected Markov transit time to state k.
 %   T = EMTT(tau,p,k) computes the expected Markov transit time to state k,
 %   averaged over all initial states (1,...,k-1), with given transition
-%   probability p and decision time tau.
+%   probability p and decision time tau. The EMTT with target state kc is
+%   equal to the ESD.
 %
 %   Inputs:
 %       tau [DOUBLE]: the decision time
