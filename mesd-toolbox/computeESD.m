@@ -1,16 +1,14 @@
-function [mesd,varargout] = computeMESD(tau,p,varargin)
-% COMPUTEMESD Compute the minimal expected switch duration based on
-% (tau,p)-points.
-%   mesd = COMPUTEMESD(tau,p) computes the minimal expected switching time
-%   based on the evaluated (decision window length, accuracy)-points 
+function [esd,varargout] = computeESD(tau,p,varargin)
+% COMPUTEMESD Compute the expected switch duration for given (tau,p)-points.
+%   msd = COMPUTEESD(tau,p) computes the expected switching time
+%   for given (decision window length, accuracy)-point(s) 
 %   (tau,p), using  minimally 5 states, lower bound 0.65 and confidence 
 %   level 0.8.
 %
-%   [mesd,Nopt,tauOpt,pOpt] = COMPUTEMESD(tau,p) also returns the
-%   optimal number of states Nopt, decision window length tauOpt and 
-%   accuracy pOpt.
+%   [mesd,Nopt,kc] = COMPUTEESD(tau,p) also returns the
+%   optimal number of states Nopt and target state kc.
 %
-%   [...] = COMPUTEMESD(tau,p,'Nmin',Nmin,'P0',P0,'c',c) uses minimal 
+%   [...] = COMPUTEESD(tau,p,'Nmin',Nmin,'P0',P0,'c',c) uses minimal 
 %   number of states Nmin, confidence level P0 and lower bound c.
 %
 %   Inputs:
@@ -37,17 +35,11 @@ parse(ip,varargin{:})
 args = ip.Results;
 tau = tau(:); p = p(:);
 
-%% Interpolate performance curve
-[tau,p] = interpolatePerfCurve(tau,p);
-
-%% Optimize Markov chain per sampled point
+%% Optimize Markov chain
 Nopt = optimizeMarkovChain(p,args.Nmin,args.P0,args.c);
 
-%% Compute expected switch duration per sampled point
+%% Compute expected switch duration
 kc = targetState(Nopt,args.c);
 esd = emtt(tau,p,kc);
-
-%% Compute optimal ESD
-[mesd,ind] = min(esd);
-varargout{1} = Nopt(ind); varargout{2} = tau(ind); varargout{3} = p(ind);
+varargout{1} = Nopt; varargout{2} = kc;
 end

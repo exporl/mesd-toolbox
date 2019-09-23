@@ -1,9 +1,11 @@
 % MESD TOOLBOX
 % Version 1.2, 14-08-2019
 %
-% MAIN FUNCTION
+% MAIN FUNCTIONS
 %   computeMESD           - Compute the minimal expected switch duration 
 %                           based on (tau,p)-points.
+%   computeESD            - Compute the expected switch duration for given
+%                           (tau,p)-point(s).
 %
 % OPTIMIZATION MARKOV CHAIN MODEL
 %   optimizeMarkovChain  - Compute the optimal AAD Markov chain.

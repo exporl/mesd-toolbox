@@ -36,6 +36,10 @@ These steps are implemented in the *main*-function [computeMESD.m](mesd-toolbox/
      mesd = computeMESD(tau,p);
  The default hyperparameter values are P_0 = 0.8 (confidence level), c = 0.65 (lower bound confidence interval), N_min = 5 (minimal number of states) and K = 1000 (number of samples evaluated on the performance curve). These hyperparameters can be adapted via extra arguments in the `computeMESD`-function.
  
+ The toolbox also provides a [computeESD.m](mesd-toolbox/computeESD.m)-function to compute the ESD for a given performance pair (tau,p):
+ 
+     esd = computeESD(tau,p);
+
 **Designing an optimal Markov chain model for a neuro-steered hearing prosthesis** 
 
 In Section *II-C*, a methodology is proposed to design an optimal Markov chain model for an adaptive gain control system in a neuro-steered hearing prosthesis. For a fixed accuracy p and hyperparameters P_0, c and N_min, the optimal number of states can be found with:
