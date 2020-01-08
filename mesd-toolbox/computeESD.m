@@ -1,11 +1,11 @@
 function [esd,varargout] = computeESD(tau,p,varargin)
-% COMPUTEMESD Compute the expected switch duration for given (tau,p)-points.
-%   msd = COMPUTEESD(tau,p) computes the expected switching time
+% COMPUTEESD Compute the expected switch duration for given (tau,p)-points.
+%   esd = COMPUTEESD(tau,p) computes the expected switch duration
 %   for given (decision window length, accuracy)-point(s) 
 %   (tau,p), using  minimally 5 states, lower bound 0.65 and confidence 
 %   level 0.8.
 %
-%   [mesd,Nopt,kc] = COMPUTEESD(tau,p) also returns the
+%   [esd,Nopt,kc] = COMPUTEESD(tau,p) also returns the
 %   optimal number of states Nopt and target state kc.
 %
 %   [...] = COMPUTEESD(tau,p,'Nmin',Nmin,'P0',P0,'c',c) uses minimal 
