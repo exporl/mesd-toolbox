@@ -28,7 +28,12 @@ function [mesd,varargout] = computeMESD(tau,p,varargin)
 %% Asserts and input processing
 [tau,p] = esd_utils.processInputs(tau,p);
 assert(all(tau > 0),'tau should be positive.');
-assert(all(p > 0.5 & p <= 1),'p should lie within ]0.5,1].');
+assert(all(p >= 0 & p <= 1),'p should lie within [0,1].');
+if any(p <= 0.5)
+   warning('accuracies below 50% (and corresponding window lengths) will be removed. Be careful when interpreting the result.');
+   tau(p <= 0.5) = [];
+   p(p <= 0.5) = [];
+end
 ip = inputParser;
 addParameter(ip,'Nmin',5,@(s) assert(isnumeric(s) && all(s >= 2),'Nmin shoud be larger than or equal to 2.'));
 addParameter(ip,'P0',0.8,@(s) assert(isnumeric(s) && all(s > 0 & s < 1),'P0 should lie within ]0,1[.'));
@@ -49,5 +54,8 @@ esd = emtt(tau,p,kc);
 
 %% Compute optimal ESD
 [mesd,ind] = min(esd);
+if tau(ind) == min(tau) || tau(ind) == max(tau)
+    warning('the optimal decision length lies at the boundary of your interval. Consider taking a larger interval of decision window lengths.');
+end
 varargout{1} = Nopt(ind); varargout{2} = tau(ind); varargout{3} = p(ind);
 end
