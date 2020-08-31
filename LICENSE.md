@@ -80,9 +80,9 @@ The Software constitutes any software distributed as part of or pertaining to th
 
 #### A.2 References:
 
-[1] S. Geirnaert, T. Francart, and A. Bertrand, "An Interpretable Performance Metric for Auditory Attention Decoding Algorithms in a Context of Neuro-Steered Gain Control," August 2019, *Internal Report*
+[1] S. Geirnaert, T. Francart, and A. Bertrand, "An Interpretable Performance Metric for Auditory Attention Decoding Algorithms in a Context of Neuro-Steered Gain Control," IEEE Transactions on Neural Systems and Rehabilitation Engineering, 28(1), 307-317 (2020)
 
-[2] S. Geirnaert, T. Francart, and A. Bertrand, "A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain," Accepted for publication in Proc. European Signal Processing Conference (EUSIPCO), A Coruña, Spain, Sept. 2019
+[2] S. Geirnaert, T. Francart, and A. Bertrand, "A New Metric to Evaluate Auditory Attention Detection Performance Based on a Markov Chain," Proc. European Signal Processing Conference (EUSIPCO), A Coruña, Spain, Sept. 2019
 
 [3] S. Geirnaert, T. Francart, and A. Bertrand, "MESD toolbox," August 2019, Available online, URL: https://github.com/exporl/mesd-toolbox
 
