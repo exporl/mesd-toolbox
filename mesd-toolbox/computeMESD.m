@@ -34,6 +34,9 @@ if any(p <= 0.5)
    tau(p <= 0.5) = [];
    p(p <= 0.5) = [];
 end
+if all(p <= 0.5)
+    error('Error: all accuracies for this subject are below 50%. The MESD cannot be computed, remove this subject.');
+end
 ip = inputParser;
 addParameter(ip,'Nmin',5,@(s) assert(isnumeric(s) && all(s >= 2),'Nmin shoud be larger than or equal to 2.'));
 addParameter(ip,'P0',0.8,@(s) assert(isnumeric(s) && all(s > 0 & s < 1),'P0 should lie within ]0,1[.'));
