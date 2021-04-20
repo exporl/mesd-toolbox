@@ -20,7 +20,7 @@ All functions are documented properly in their respective m-files (Matlab toolbo
  
 ### Quick start guide
  
-All functions needed to compute the MESD metric can be found in the [MESD folder for Matab users](mesd-toolbox/) / [MESD folder for Python users](mesd-toolbox.python/). Before starting, make sure that this folder is added to the MATLAB / system path.  
+All functions needed to compute the MESD metric can be found in the [MESD folder for Matab users](mesd-toolbox/) / [MESD folder for Python users](mesd-toolbox-python/). Before starting, make sure that this folder is added to the MATLAB / system path.  
 
 **Computation of the MESD performance metric**
 
