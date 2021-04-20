@@ -16,7 +16,7 @@ Developed and tested in MATLAB R2018b and in Python 3.8.9.
 
 ### Documentation
 
-All functions are documented properly in their respective m-files (Matlab toolbox) and in the respective functions in the [python module](/mesd-toolbox-python/mesd_toolbox.py) (Python toolbox). Additional documentation and examples can be found in the [doc](doc/) folder, which contains a [manual](doc/manual.pdf) in pdf format and a [MESD demo file for Matlab](doc/mesdDemo.m) as well as a [MESD demo in a jupyter notebook for Python](doc/mesd_demo.ipynb) to illustrate the usage of the various functions. A quick start guide is provided in the next section.
+All functions are documented properly in their respective m-files (MATLAB toolbox) and in the respective functions in the [python module](/mesd-toolbox-python/mesd_toolbox.py) (Python toolbox). Additional documentation and examples can be found in the [doc](doc/) folder, which contains a [manual](doc/manual.pdf) in pdf format and a [MESD demo file for MATLAB](doc/mesdDemo.m) as well as a [MESD demo in a jupyter notebook for Python](doc/mesd_demo.ipynb) to illustrate the usage of the various functions. A quick start guide is provided in the next section.
  
 ### Quick start guide
  
@@ -33,26 +33,26 @@ The MESD is computed in four steps:
  
 These steps are implemented in the *main*-function [computeMESD.m](mesd-toolbox/computeMESD.m) / [compute_MESD.py](/mesd-toolbox-python/mesd_toolbox.py#L62). Given the evaluated (tau_i,p_i)-performance points `(tau,p)`, the MESD can be computed with:
 
-     mesd = computeMESD(tau,p);       % Matlab
+     mesd = computeMESD(tau,p);       % MATLAB
      mesd, *_ = compute_MESD(tau,p);  # Python
  The default hyperparameter values are P_0 = 0.8 (confidence level), c = 0.65 (lower bound confidence interval), N_min = 5 (minimal number of states) and K = 1000 (number of samples evaluated on the performance curve). These hyperparameters can be adapted via extra arguments in the `computeMESD.m`-function / `compute_MESD.py`-function.
  
  The toolbox also provides a [computeESD.m](mesd-toolbox/computeESD.m)-function / [compute_ESD](/mesd-toolbox-python/mesd_toolbox.py#L26)-function to compute the ESD for a given performance pair (tau,p):
  
-     esd = computeESD(tau,p);       % Matlab
+     esd = computeESD(tau,p);       % MATLAB
      esd, *_ = compute_ESD(tau,p);  # Python
 
 **Designing an optimal Markov chain model for a neuro-steered hearing prosthesis** 
 
 In Section *II-C*, a methodology is proposed to design an optimal Markov chain model for an adaptive gain control system in a neuro-steered hearing prosthesis. For a fixed accuracy p and hyperparameters P_0, c and N_min, the optimal number of states can be found with:
 
-     Nopt = optimizeMarkovChain(p,Nmin,P0,c);         % Matlab
+     Nopt = optimizeMarkovChain(p,Nmin,P0,c);         % MATLAB
      Nopt = optimize_Markov_chain(tau,p,N_min,P0,c);  # Python
 
 
 The optimal model for a certain neural decoder (represented by evaluated (tau_i,p_i)-points) can be identified by extra outputs of the `computeMESD`-function:
 
-     [mesd,Nopt,tauOpt,pOpt] = computeMESD(tau,p,'Nmin',Nmin,'P0',P0,'c',c);    % Matlab
+     [mesd,Nopt,tauOpt,pOpt] = computeMESD(tau,p,'Nmin',Nmin,'P0',P0,'c',c);    % MATLAB
      mesd, N_opt, tau_opt, p_opt = compute_MESD(tau,p,N_min,P0,c)               # Python
 
  ## References
