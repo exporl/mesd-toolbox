@@ -1,7 +1,7 @@
 # MESD TOOLBOX (Python)
 # Version 1.0, 19-04-2021
 #
-# Python version, based on Simon Geirnaert's MESD toolbox for Matlab.
+# Python version, based on Simon Geirnaert's MESD toolbox for MATLAB.
 #
 # Author: Debora Fieberg, KU Leuven
 # Department of Neurosciences, Research Group Experimental Oto-rhino-laryngology &
